@@ -1,0 +1,14 @@
+.container {
+  margin: 3%;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.per-card {
+  margin: 1%;
+  flex: 1 1 auto;
+}
