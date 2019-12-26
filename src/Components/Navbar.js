@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import { PageHeader } from "antd";
 import "antd/dist/antd.css";
-
-const navStyle = {
-  backgroundColor: "#D53141",
-  color: "#ffffff"
-};
+import pokemonLogo from "./pokemon.png";
 
 class Navbar extends Component {
   render() {
-    return <PageHeader style={navStyle} title="Pokedex" />;
+    return (
+      <div className="navbar">
+        <img src={pokemonLogo} alt="Pokemon" className="logo" />
+      </div>
+    );
   }
 }
 

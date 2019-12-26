@@ -8,7 +8,7 @@ class PokemonContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      size: 24,
+      maxId: 0,
       pokemon: [],
       hasMore: true,
       next: null
@@ -16,34 +16,45 @@ class PokemonContainer extends Component {
   }
 
   loadItems = async () => {
+    const { next, pokemon } = this.state;
+    let { maxId } = this.state;
     let url = `https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0`;
 
-    if (this.state.next) {
-      url = this.state.next;
+    if (next) {
+      url = next;
     }
 
     const response = await fetch(url);
     const newPokemon = await response.json();
 
-    const length = this.state.pokemon.length;
-    const newPokemonArray = newPokemon.results.map(
-      (pokemonItem, localIndex) => {
+    const length = pokemon.length;
+    const newLength = newPokemon.results.length;
+    const newPokemonArray = newPokemon.results
+      .filter(pokemonItem => {
+        const urlArray = pokemonItem.url.split("/");
+        const pokemonId = Number(urlArray[urlArray.length - 2]);
+        return pokemonId <= length + newLength;
+      })
+      .map((pokemonItem, localIndex) => {
+        const name = pokemonItem.name
+          .split("-")
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(" ");
+        const id = length + localIndex + 1;
         return {
-          name: pokemonItem.name.split("-")[0],
-          id: length + localIndex + 1
+          name: name,
+          id: id
         };
-      }
-    );
+      });
 
-    // console.log(this.state.pokemon);
     if (newPokemon.next) {
       this.setState({
-        pokemon: this.state.pokemon.concat(newPokemonArray),
+        pokemon: pokemon.concat(newPokemonArray),
         next: newPokemon.next
       });
     } else {
       this.setState({
-        pokemon: this.state.pokemon.concat(newPokemonArray),
+        pokemon: pokemon.concat(newPokemonArray),
         hasMore: false
       });
     }
