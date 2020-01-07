@@ -1,13 +1,8 @@
-.container {
-  margin: 3%;
-}
-
 .row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.per-card {
-  flex: 1 1 auto;
+  width: 95%;
+  margin: 1rem auto;
+  justify-content: space-evenly;
 }
