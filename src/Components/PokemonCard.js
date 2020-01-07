@@ -63,22 +63,22 @@ export default class PokemonCard extends Component {
               ))}
             </div>
           </div>
-          <div className="pokemon-id" style={{ color: accentColor }}>
-            #{id}
-          </div>
-          <div className="sprite-container">
-            <img
-              className="pokeball"
-              alt=""
-              src={pokeballLogo}
-              style={{ filter: filter }}
-            />
-            <img
-              className="pokemon-sprite"
-              alt={`Pokemon No ${id}`}
-              src={pokemonSprite}
-            />
-          </div>
+        </div>
+        <div className="pokemon-id" style={{ color: accentColor }}>
+          #{id}
+        </div>
+        <div className="sprite-container">
+          <img
+            className="pokeball"
+            alt=""
+            src={pokeballLogo}
+            style={{ filter: filter }}
+          />
+          <img
+            className="pokemon-sprite"
+            alt={`Pokemon No ${id}`}
+            src={pokemonSprite}
+          />
         </div>
       </div>
     );
