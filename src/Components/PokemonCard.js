@@ -48,38 +48,34 @@ export default class PokemonCard extends Component {
     const pokemonSprite = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`; // Official Pokemon.com assets
     return (
       <div className="card-container" style={{ backgroundColor: primaryColor }}>
-        <div className="text-sprite-container">
-          <div className="text-container">
-            <div className="title">{name}</div>
-            <div className="types-container">
-              {types.map(type => (
-                <div
-                  className="type"
-                  key={type}
-                  style={{ backgroundColor: accentColor }}
-                >
-                  {type}
-                </div>
-              ))}
-            </div>
+        <div className="text-container">
+          <div className="title">{name}</div>
+          <div className="types-container">
+            {types.map(type => (
+              <div
+                className="type"
+                key={type}
+                style={{ backgroundColor: accentColor }}
+              >
+                {type}
+              </div>
+            ))}
           </div>
         </div>
         <div className="pokemon-id" style={{ color: accentColor }}>
           #{id}
         </div>
-        <div className="sprite-container">
-          <img
-            className="pokeball"
-            alt=""
-            src={pokeballLogo}
-            style={{ filter: filter }}
-          />
-          <img
-            className="pokemon-sprite"
-            alt={`Pokemon No ${id}`}
-            src={pokemonSprite}
-          />
-        </div>
+        <img
+          className="pokeball"
+          alt=""
+          src={pokeballLogo}
+          style={{ filter: filter }}
+        />
+        <img
+          className="pokemon-sprite"
+          alt={`Pokemon No ${id}`}
+          src={pokemonSprite}
+        />
       </div>
     );
   }
