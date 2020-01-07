@@ -62,9 +62,9 @@ export default class PokemonCard extends Component {
                 </div>
               ))}
             </div>
-            <div className="pokemon-id" style={{ color: accentColor }}>
-              #{id}
-            </div>
+          </div>
+          <div className="pokemon-id" style={{ color: accentColor }}>
+            #{id}
           </div>
           <div className="sprite-container">
             <img
