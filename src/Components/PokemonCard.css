@@ -105,9 +105,3 @@
 
   opacity: 0.6;
 }
-
-.bordered {
-  border-style: dashed;
-  border-color: black;
-  border-width: 1px;
-}

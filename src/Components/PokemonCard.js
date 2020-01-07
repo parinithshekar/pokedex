@@ -47,42 +47,37 @@ export default class PokemonCard extends Component {
     //   const imgString = `https://pokeres.bastionbot.org/images/pokemon/${props.number}.png`; // Incomplete asset pack
     const pokemonSprite = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`; // Official Pokemon.com assets
     return (
-      <div>
-        <div
-          className="card-container"
-          style={{ backgroundColor: primaryColor }}
-        >
-          <div className="text-sprite-container">
-            <div className="text-container">
-              <div className="title">{name}</div>
-              <div className="types-container">
-                {types.map(type => (
-                  <div
-                    className="type"
-                    key={type}
-                    style={{ backgroundColor: accentColor }}
-                  >
-                    {type}
-                  </div>
-                ))}
-              </div>
-              <div className="pokemon-id" style={{ color: accentColor }}>
-                #{id}
-              </div>
+      <div className="card-container" style={{ backgroundColor: primaryColor }}>
+        <div className="text-sprite-container">
+          <div className="text-container">
+            <div className="title">{name}</div>
+            <div className="types-container">
+              {types.map(type => (
+                <div
+                  className="type"
+                  key={type}
+                  style={{ backgroundColor: accentColor }}
+                >
+                  {type}
+                </div>
+              ))}
             </div>
-            <div className="sprite-container">
-              <img
-                className="pokeball"
-                alt=""
-                src={pokeballLogo}
-                style={{ filter: filter }}
-              />
-              <img
-                className="pokemon-sprite"
-                alt={`Pokemon No ${id}`}
-                src={pokemonSprite}
-              />
+            <div className="pokemon-id" style={{ color: accentColor }}>
+              #{id}
             </div>
+          </div>
+          <div className="sprite-container">
+            <img
+              className="pokeball"
+              alt=""
+              src={pokeballLogo}
+              style={{ filter: filter }}
+            />
+            <img
+              className="pokemon-sprite"
+              alt={`Pokemon No ${id}`}
+              src={pokemonSprite}
+            />
           </div>
         </div>
       </div>

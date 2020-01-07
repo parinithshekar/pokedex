@@ -1,14 +1,20 @@
 import React, { Component } from "react";
 import InfiniteScroll from "react-infinite-scroller";
+import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import "antd/dist/antd.css";
 import "./PokemonContainer.css";
+
+const getNum = num => {
+  if (num < 10) return `00${num}`;
+  else if (num < 100) return `0${num}`;
+  else return num;
+};
 
 class PokemonContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      maxId: 0,
       pokemon: [],
       hasMore: true,
       next: null
@@ -17,7 +23,6 @@ class PokemonContainer extends Component {
 
   loadItems = async () => {
     const { next, pokemon } = this.state;
-    let { maxId } = this.state;
     let url = `https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0`;
 
     if (next) {
@@ -81,10 +86,12 @@ class PokemonContainer extends Component {
             <div className="row">
               {pokemon.map(currentPokemon => (
                 <div className="per-card" key={currentPokemon.id}>
-                  <PokemonCard
-                    number={currentPokemon.id}
-                    name={currentPokemon.name}
-                  />
+                  <Link to={`/pokemon/${getNum(currentPokemon.id)}`}>
+                    <PokemonCard
+                      number={currentPokemon.id}
+                      name={currentPokemon.name}
+                    />
+                  </Link>
                 </div>
               ))}
             </div>

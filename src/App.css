@@ -41,3 +41,9 @@
   font-family: "Cabin";
   src: url("./Cabin-Medium.ttf") format("truetype");
 }
+
+.bordered {
+  border-style: dashed;
+  border-color: black;
+  border-width: 1px;
+}

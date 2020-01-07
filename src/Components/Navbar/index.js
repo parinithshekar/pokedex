@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "antd/dist/antd.css";
 import pokemonLogo from "./pokemon.png";
+import "./navbar.css";
 
 class Navbar extends Component {
   render() {
