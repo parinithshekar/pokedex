@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import InfiniteScroll from "react-infinite-scroller";
-import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import "antd/dist/antd.css";
 import "./PokemonContainer.css";
-
-const getNum = num => {
-  if (num < 10) return `00${num}`;
-  else if (num < 100) return `0${num}`;
-  else return num;
-};
 
 class PokemonContainer extends Component {
   constructor(props) {
@@ -86,12 +79,10 @@ class PokemonContainer extends Component {
             <div className="row">
               {pokemon.map(currentPokemon => (
                 <div className="per-card" key={currentPokemon.id}>
-                  <Link to={`/pokemon/${getNum(currentPokemon.id)}`}>
-                    <PokemonCard
-                      number={currentPokemon.id}
-                      name={currentPokemon.name}
-                    />
-                  </Link>
+                  <PokemonCard
+                    number={currentPokemon.id}
+                    name={currentPokemon.name}
+                  />
                 </div>
               ))}
             </div>

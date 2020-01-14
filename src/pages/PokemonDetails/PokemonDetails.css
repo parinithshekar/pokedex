@@ -1,9 +1,240 @@
 .pokemon-view {
-  background-image: linear-gradient(aquamarine, white);
-  height: 50%;
+  /* min-height: calc(100vh - 80px); */
+  min-height: 100vh;
+  margin-top: -80px;
+  padding-top: 80px;
+}
+
+.pokemon-view-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 60vw;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.details-text-container {
+  position: relative;
+  width: 100%;
+}
+
+.name-types-container {
+  width: 50%;
+  margin-left: 2em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.details-pokemon-name {
+  font-size: 5em;
+  z-index: 1;
+  text-align: left;
+}
+
+.details-types-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.details-pokemon-type {
+  font-size: 2em;
+  padding: 0.05rem 0.5rem;
+  margin-right: 0.6rem;
+  border-radius: 6px;
+  background-color: #cac9c9;
+  opacity: 0.9;
+}
+
+.details-pokemon-id {
+  font-size: 4.5em;
+  font-weight: 1000;
+
+  color: white;
+
+  position: absolute;
+  right: 0.5em;
+  top: 0;
+}
+
+.details-pokemon-species {
+  font-size: 3em;
+
+  color: white;
+
+  position: absolute;
+  right: 0.5em;
+  bottom: 0;
+}
+
+.prev-pokemon-sprite {
+  position: absolute;
+
+  left: -30%;
+  top: 30%;
+
+  width: 20%;
+  max-width: 475px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: -4.6rem;
+  z-index: 2;
+
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.pokemon-sprite {
+  width: 30%;
+  max-width: 475px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: -4.6rem;
+  z-index: 2;
+}
+
+.next-pokemon-sprite {
+  position: absolute;
+
+  right: -30%;
+  top: 30%;
+
+  width: 20%;
+  max-width: 475px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: -4.6rem;
+  z-index: 2;
+
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.pokemon-view-pokeball {
+  position: absolute;
+
+  top: 10em;
+
+  width: 35%;
+  height: auto;
+
+  opacity: 0.6;
 }
 
 .pokemon-info {
-  background-image: linear-gradient(aquamarine, white);
-  height: 50%;
+  width: 70%;
+  max-width: 100%;
+  background-color: white;
+
+  padding: 5em 1em 2em;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  color: white;
+
+  text-align: center;
+
+  z-index: 1;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-evenly;
+
+  text-align: left;
+  font-size: medium;
+}
+
+.description {
+  color: black;
+}
+
+.metrics-container {
+  display: flex;
+  width: fit-content;
+  border: solid 1px #a0a0a0;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.1),
+    -2px 2px 2px rgba(0, 0, 0, 0.1), 2px -2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin: 1em;
+}
+
+.metric {
+  width: fit-content;
+  text-align: center;
+  margin: 0 1.5em;
+}
+
+.metric-heading {
+}
+
+.metric-value {
+  color: black;
+}
+
+.about-property {
+  display: flex;
+
+  font-size: medium;
+}
+
+.property-key {
+  width: 8em;
+}
+
+.property-value {
+  width: 10em;
+  color: black;
+}
+
+/* Text active color */
+.ant-tabs-tab-active {
+  color: black !important;
+}
+
+/* Text hover color */
+.ant-tabs-tab:hover {
+  color: black !important;
+}
+
+/* Tab text size */
+.ant-tabs-nav-container {
+  font-size: medium;
+}
+
+/* Ink bar active color */
+.ant-tabs-ink-bar {
+  background-color: #4834d4 !important;
+  /* background-color: #fc6c6c !important; */
+}
+
+.stat-container {
+  display: flex;
+  font-size: medium;
+  margin: 1em;
+}
+
+.stat-name {
+  width: 10em;
+  margin: 0 1em;
+}
+
+/* Plain progress bar */
+.ant-progress-inner {
+  background-color: #e0e0e0 !important;
+}
+
+.stat-value {
+  width: 4em;
+  margin: 0 1em;
+  color: black;
 }

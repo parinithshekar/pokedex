@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Navbar from "../../Components/Navbar/";
 import PokemonContainer from "../../Components/PokemonContainer";
 

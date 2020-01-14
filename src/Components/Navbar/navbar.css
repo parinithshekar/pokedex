@@ -3,11 +3,13 @@
   padding: 1rem;
   position: sticky;
   top: 0;
+  height: 80px;
 
   display: flex;
   flex-direction: row;
 
-  background-color: white;
+  /* background-color: rgba(47, 54, 64, 0.8); */
+  background-color: #2f3640ea;
 
   z-index: 100;
 }

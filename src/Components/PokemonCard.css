@@ -51,7 +51,7 @@
   opacity: 0.9;
 }
 
-.pokemon-id {
+.pokemon-card-id {
   font-size: 2.5em;
   font-weight: 900;
 
@@ -62,7 +62,7 @@
   bottom: -7px;
 }
 
-.pokemon-sprite {
+.pokemon-card-sprite {
   height: 100%;
 
   top: 0;
@@ -71,7 +71,7 @@
   position: absolute;
 }
 
-.pokeball {
+.pokemon-card-pokeball {
   height: 16em;
 
   position: absolute;
