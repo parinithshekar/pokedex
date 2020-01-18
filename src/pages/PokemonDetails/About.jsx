@@ -10,7 +10,7 @@ import {
 export default class About extends Component {
   state = {};
 
-  async componentDidMount() {
+  async populateState() {
     let response = await fetch(this.props.url);
     const pokemonInfo = await response.json();
 
@@ -50,6 +50,16 @@ export default class About extends Component {
       description,
       aboutDetails
     });
+  }
+
+  async componentDidMount() {
+    await this.populateState();
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      await this.populateState();
+    }
   }
 
   render() {

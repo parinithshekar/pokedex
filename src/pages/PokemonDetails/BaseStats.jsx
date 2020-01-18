@@ -7,13 +7,24 @@ export default class BaseStats extends Component {
   state = {
     baseStats: []
   };
-  async componentDidMount() {
+
+  async populateState() {
     let response = await fetch(this.props.url);
     const pokemonInfo = await response.json();
     const baseStats = pokemonInfo.stats.reverse();
     this.setState({
       baseStats
     });
+  }
+
+  async componentDidMount() {
+    await this.populateState();
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (prevProps.url !== this.props.url) {
+      await this.populateState();
+    }
   }
 
   statValue = (percent, successPercent) => {

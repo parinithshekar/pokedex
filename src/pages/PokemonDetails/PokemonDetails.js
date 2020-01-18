@@ -15,7 +15,7 @@ const { TabPane } = Tabs;
 export default class PokemonDetails extends Component {
   state = { id: this.props.match.params.id, types: [] };
 
-  async componentDidMount() {
+  async populateState() {
     const url = `https://pokeapi.co/api/v2/pokemon/${getNum(this.state.id)}/`;
     let response = await fetch(url);
     const pokemonInfo = await response.json();
@@ -50,6 +50,18 @@ export default class PokemonDetails extends Component {
     });
   }
 
+  async componentDidMount() {
+    await this.populateState();
+  }
+
+  async componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      this.setState({ id: this.props.match.params.id, types: [] }, async () => {
+        await this.populateState();
+      });
+    }
+  }
+
   // componentDidUpdate() {
   //   let inkbar = document.getElementsByClassName(
   //     "ant-tabs-ink-bar ant-tabs-ink-bar-animated"
@@ -71,6 +83,7 @@ export default class PokemonDetails extends Component {
     } = this.state;
     const imgString = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`;
     const url = `https://pokeapi.co/api/v2/pokemon/${getNum(id)}/`;
+    console.log(url);
 
     const prevId = getNum(id) - 1;
     const nextId = getNum(id) + 1;
@@ -82,25 +95,31 @@ export default class PokemonDetails extends Component {
       nextId
     )}.png`;
 
-    const prevPokemon = (prevId>1) ? (<Link to={`/pokemon/${getString(prevId)}`} >
-      <img
-        className="prev-pokemon-sprite"
-        src={prevPokemonImgString}
-        alt={`Pokemon No: ${id - 1}`}
-        width="475"
-        height="475"
-      />
-    </Link>) : null;
+    const prevPokemon =
+      prevId > 1 ? (
+        <Link to={`/pokemon/${getString(prevId)}`}>
+          <img
+            className="prev-pokemon-sprite"
+            src={prevPokemonImgString}
+            alt={`Pokemon No: ${id - 1}`}
+            width="475"
+            height="475"
+          />
+        </Link>
+      ) : null;
 
-    const nextPokemon = (nextId<=807) ? (<Link to={`/pokemon/${getString(nextId)}`}>
-      <img
-        className="next-pokemon-sprite"
-        src={nextPokemonImgString}
-        alt={`Pokemon No: ${id + 1}`}
-        width="475"
-        height="475"
-      />
-    </Link>) : null;
+    const nextPokemon =
+      nextId <= 807 ? (
+        <Link to={`/pokemon/${getString(nextId)}`}>
+          <img
+            className="next-pokemon-sprite"
+            src={nextPokemonImgString}
+            alt={`Pokemon No: ${id + 1}`}
+            width="475"
+            height="475"
+          />
+        </Link>
+      ) : null;
 
     return (
       <>

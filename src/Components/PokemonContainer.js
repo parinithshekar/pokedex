@@ -74,7 +74,7 @@ class PokemonContainer extends Component {
             loadMore={this.loadItems}
             hasMore={hasMore}
             loader={loader}
-            threshold={500}
+            threshold={700}
           >
             <div className="row">
               {pokemon.map(currentPokemon => (
