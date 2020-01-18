@@ -82,6 +82,26 @@ export default class PokemonDetails extends Component {
       nextId
     )}.png`;
 
+    const prevPokemon = (prevId>1) ? (<Link to={`/pokemon/${getString(prevId)}`} >
+      <img
+        className="prev-pokemon-sprite"
+        src={prevPokemonImgString}
+        alt={`Pokemon No: ${id - 1}`}
+        width="475"
+        height="475"
+      />
+    </Link>) : null;
+
+    const nextPokemon = (nextId<=807) ? (<Link to={`/pokemon/${getString(nextId)}`}>
+      <img
+        className="next-pokemon-sprite"
+        src={nextPokemonImgString}
+        alt={`Pokemon No: ${id + 1}`}
+        width="475"
+        height="475"
+      />
+    </Link>) : null;
+
     return (
       <>
         <Navbar />
@@ -120,19 +140,7 @@ export default class PokemonDetails extends Component {
                 {species}
               </div>
             </div>
-            <Link
-              to={{
-                pathname: `/pokemon/${getString(prevId)}`
-              }}
-            >
-              <img
-                className="prev-pokemon-sprite"
-                src={prevPokemonImgString}
-                alt={`Pokemon No: ${id - 1}`}
-                width="475"
-                height="475"
-              />
-            </Link>
+            {prevPokemon}
             <img
               className="pokemon-sprite"
               src={imgString}
@@ -140,19 +148,7 @@ export default class PokemonDetails extends Component {
               width="475"
               height="475"
             />
-            <Link
-              to={{
-                pathname: `/pokemon/${getString(nextId)}`
-              }}
-            >
-              <img
-                className="next-pokemon-sprite"
-                src={nextPokemonImgString}
-                alt={`Pokemon No: ${id + 1}`}
-                width="475"
-                height="475"
-              />
-            </Link>
+            {nextPokemon}
             <img
               className="pokemon-view-pokeball"
               src={pokeballLogo}

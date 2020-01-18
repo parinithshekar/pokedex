@@ -75,10 +75,10 @@
 .prev-pokemon-sprite {
   position: absolute;
 
-  left: -30%;
-  top: 30%;
+  left: -18vw;
+  top: 20vh;
 
-  width: 20%;
+  width: 13vw;
   max-width: 475px;
   height: auto;
   margin: 0 auto;
@@ -90,7 +90,7 @@
 }
 
 .pokemon-sprite {
-  width: 30%;
+  width: 23vw;
   max-width: 475px;
   height: auto;
   margin: 0 auto;
@@ -101,10 +101,10 @@
 .next-pokemon-sprite {
   position: absolute;
 
-  right: -30%;
-  top: 30%;
+  right: -18vw;
+  top: 20vh;
 
-  width: 20%;
+  width: 13vw;
   max-width: 475px;
   height: auto;
   margin: 0 auto;
@@ -112,22 +112,22 @@
   z-index: 2;
 
   filter: grayscale(100%);
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .pokemon-view-pokeball {
   position: absolute;
 
-  top: 10em;
+  top: 20vh;
 
-  width: 35%;
+  width: 20vw;
   height: auto;
 
   opacity: 0.6;
 }
 
 .pokemon-info {
-  width: 70%;
+  width: 55vw;
   max-width: 100%;
   background-color: white;
 

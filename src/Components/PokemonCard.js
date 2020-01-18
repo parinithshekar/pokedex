@@ -40,11 +40,7 @@ export default class PokemonCard extends Component {
     //   const imgString = `https://pokeres.bastionbot.org/images/pokemon/${props.number}.png`; // Incomplete asset pack
     const pokemonSprite = `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png`; // Official Pokemon.com assets
     return (
-      <Link
-        to={{
-          pathname: `/pokemon/${id}`
-        }}
-      >
+      <Link to={`/pokemon/${id}`}>
         <div
           className="card-container"
           style={{ backgroundColor: primaryColor }}
