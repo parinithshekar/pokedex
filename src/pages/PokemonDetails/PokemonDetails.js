@@ -4,7 +4,6 @@ import About from "./About";
 import BaseStats from "./BaseStats";
 import Navbar from "../../Components/Navbar/";
 import { Tabs } from "antd";
-import history from "../../history";
 import { getNum, capitalize, getString } from "../../utils";
 import styles from "../../colors";
 import "./PokemonDetails.css";

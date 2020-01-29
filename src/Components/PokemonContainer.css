@@ -9,6 +9,63 @@
 }
 
 .per-card {
-  margin: 1rem;
   transition: 0.1s;
+}
+
+.pokemon-grid {
+  width: 95%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+
+  justify-items: center;
+  align-items: center;
+
+  grid-row-gap: 20px;
+}
+
+/*
+  Landscape phone and low res tablet
+  Had to do 481 but didn't work
+*/
+@media (min-width: 560px) and (max-width: 767px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(3, 33%);
+    grid-row-gap: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(3, 33%);
+    grid-row-gap: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .pokemon-grid {
+    grid-template-columns: repeat(4, 25%);
+    grid-row-gap: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .pokemon-grid {
+    grid-template-columns: repeat(4, 25%);
+    grid-row-gap: 20px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(4, 25%);
+    grid-row-gap: 20px;
+  }
+}
+
+@media (min-width: 1281px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 20px;
+  }
 }

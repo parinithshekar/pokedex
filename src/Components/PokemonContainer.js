@@ -76,7 +76,7 @@ class PokemonContainer extends Component {
             loader={loader}
             threshold={700}
           >
-            <div className="row">
+            <div className="pokemon-grid">
               {pokemon.map(currentPokemon => (
                 <div className="per-card" key={currentPokemon.id}>
                   <PokemonCard

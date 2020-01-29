@@ -7,10 +7,10 @@
   font-family: Cabin;
   color: white;
 
-  width: 20rem;
-  height: 10rem;
+  width: 10.5em;
+  height: 7.5em;
 
-  padding: 0.5rem;
+  padding: 0.6em;
   position: relative;
   overflow: hidden;
 
@@ -18,13 +18,14 @@
 }
 
 .card-container:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  z-index: 20;
 }
 
 .text-container {
   width: 50%;
-  padding: 3%;
+  padding: 1% 2%;
 
   display: flex;
   flex-direction: column;
@@ -32,7 +33,7 @@
 }
 
 .title {
-  font-size: 1.7em;
+  font-size: 0.9em;
   z-index: 1;
   text-align: left;
 }
@@ -43,36 +44,37 @@
 }
 
 .type {
-  font-size: 1.1em;
+  font-size: 0.55em;
   padding: 0.05rem 0.25rem;
   margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
   border-radius: 4px;
   background-color: #cac9c9;
   opacity: 0.9;
 }
 
 .pokemon-card-id {
-  font-size: 2.5em;
+  font-size: 1.6em;
   font-weight: 900;
 
   color: #cac9c9;
 
   position: absolute;
   left: 5px;
-  bottom: -7px;
+  bottom: -5px;
 }
 
 .pokemon-card-sprite {
-  height: 100%;
+  height: 85%;
 
-  top: 0;
+  bottom: 0;
   right: 0;
 
   position: absolute;
 }
 
 .pokemon-card-pokeball {
-  height: 16em;
+  height: 11.5em;
 
   position: absolute;
 
@@ -83,4 +85,288 @@
     brightness(91%) contrast(81%);
 
   opacity: 0.6;
+}
+
+@media (min-width: 360px) and (max-width: 690px) {
+  .card-container {
+    width: 12em;
+    max-width: 14em;
+    height: 8em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.1em;
+  }
+
+  .type {
+    font-size: 0.8em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 85%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 12em;
+    position: absolute;
+  }
+
+  .text-container {
+    width: 50%;
+    padding: 0 3%;
+  }
+}
+
+/*
+  Low res tablets, landscape mobiles (481-767)
+  Tablets and landscape Ipads (767-1024)
+*/
+@media (min-device-width: 691px) and (max-width: 767px) {
+  .card-container {
+    width: 15em;
+    height: 8em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .type {
+    font-size: 0.8em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 13em;
+    position: absolute;
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 3%;
+  }
+}
+
+@media (min-device-width: 768px) and (max-width: 924px) {
+  .card-container {
+    width: 12.6em;
+    height: 7em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.15em;
+  }
+
+  .type {
+    font-size: 0.75em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 1.8em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 90%;
+    bottom: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 11.5em;
+    position: absolute;
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 3%;
+  }
+}
+
+@media (min-device-width: 925px) and (max-width: 1024px) {
+  .card-container {
+    width: 15em;
+    height: 8em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.3em;
+  }
+
+  .type {
+    font-size: 0.8em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 13em;
+    position: absolute;
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 3%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .card-container {
+    width: 16em;
+    height: 8em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.4em;
+  }
+
+  .type {
+    font-size: 0.95em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 13em;
+
+    top: -40px;
+    right: -80px;
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 3%;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1530px) {
+  .card-container {
+    width: 16em;
+    height: 8em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+
+  .type {
+    font-size: 1em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2.2em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 13em;
+
+    top: -40px;
+    right: -80px;
+  }
+
+  .text-container {
+    width: 60%;
+    padding: 3%;
+  }
+}
+
+@media (min-width: 1531px) {
+  .card-container {
+    width: 20em;
+    height: 10em;
+    padding: 0.6em;
+  }
+
+  .title {
+    font-size: 1.7em;
+  }
+
+  .type {
+    font-size: 1em;
+    padding: 0.05rem 0.25rem;
+    margin-right: 0.3rem;
+  }
+
+  .pokemon-card-id {
+    font-size: 2.5em;
+    font-weight: 900;
+  }
+
+  .pokemon-card-sprite {
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  .pokemon-card-pokeball {
+    height: 15.5em;
+
+    top: -40px;
+    right: -80px;
+  }
+
+  .text-container {
+    width: 50%;
+    padding: 3%;
+  }
 }
