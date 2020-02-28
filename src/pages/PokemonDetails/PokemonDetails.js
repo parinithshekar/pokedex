@@ -7,6 +7,7 @@ import { Tabs } from "antd";
 import { getNum, capitalize, getString } from "../../utils";
 import styles from "../../colors";
 import "./PokemonDetails.css";
+import "./PokemonDetailsResponsive.css";
 import pokeballLogo from "./pokeball_black.png";
 
 const { TabPane } = Tabs;
@@ -130,7 +131,7 @@ export default class PokemonDetails extends Component {
           }}
         >
           <div className="pokemon-view-container">
-            <div className="details-text-container">
+            <div className="details-text-container bordered">
               <div className="name-types-container">
                 <div className="details-pokemon-name">{name}</div>
                 <div className="details-types-container">
@@ -152,7 +153,7 @@ export default class PokemonDetails extends Component {
                 #{id}
               </div>
               <div
-                className="details-pokemon-species"
+                className="details-pokemon-species bordered"
                 style={{ color: accentColor }}
               >
                 {species}
